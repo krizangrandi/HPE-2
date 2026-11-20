@@ -46,8 +46,8 @@ def parse_availability(html: str):
     if not m:
         return None
     value = m.group(1).strip().lower()
-    if value in ("oos", "in stock", "outofstock", "sold out"):
-        return "out_of_stock"
+    if value in ("oos", "out of stock", "outofstock", "sold out"):
+        return "in_stock"
     if value in ("instock", "in stock", "in_stock", "available"):
         return "in_stock"
     return None
